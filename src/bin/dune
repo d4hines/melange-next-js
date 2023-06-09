@@ -1,4 +1,4 @@
-(executable
- (name service)
- (public_name service)
+(melange.emit
+ (emit_stdlib false)
+ (target "melange")
  (libraries my_lib))

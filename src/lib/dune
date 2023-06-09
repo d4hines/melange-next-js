@@ -1,5 +1,6 @@
 (library
  (name my_lib)
- (libraries )
- (inline_tests)
- (preprocess (pps ppx_expect)))
+ (modes melange)
+ (libraries)
+ (preprocess
+  (pps melange.ppx)))
