@@ -1,0 +1,4 @@
+(executable
+ (name service)
+ (public_name service)
+ (libraries my_lib))
