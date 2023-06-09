@@ -1,2 +1,2 @@
 [@react.component]
-let default : (~children : React.element) => React.element;
+let default: (~children: React.element) => React.element;
