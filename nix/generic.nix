@@ -46,6 +46,9 @@ with ocamlPackages; rec {
       piaf
       lwt
       yojson
+      reason-react 
+      reactjs-jsx-ppx
+      reason
 
       ppx_expect
     ];

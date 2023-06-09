@@ -1,4 +1,4 @@
 (melange.emit
  (emit_stdlib false)
  (target "melange")
- (libraries my_lib))
+ (libraries my_lib app))

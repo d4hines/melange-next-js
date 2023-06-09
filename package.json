@@ -5,6 +5,9 @@
   "repository": "https://github.com/d4hines/melange-next-js.git",
   "author": "Daniel Hines <d4hines@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "dev": "next dev"
+  },
   "dependencies": {
     "next": "^13.4.4",
     "react": "^18.2.0",
