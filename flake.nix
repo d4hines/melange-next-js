@@ -1,12 +1,13 @@
 {
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
     nix-filter.url = "github:numtide/nix-filter";
 
-    ocaml-overlay.url = "github:nix-ocaml/nix-overlays";
-    ocaml-overlay.inputs.nixpkgs.follows = "nixpkgs";
-    ocaml-overlay.inputs.flake-utils.follows = "flake-utils";
+    nixpkgs.url = "github:nix-ocaml/nix-overlays";
+    nixpkgs.inputs.flake-utils.follows = "flake-utils";
+    nixpkgs.inputs.nix-filter.follows = "nix-filter";
+
+    melange.url = "github:melange-re/melange";
   };
 
   outputs = {
@@ -14,12 +15,16 @@
     nixpkgs,
     flake-utils,
     nix-filter,
-    ocaml-overlay,
+    melange,
   }: let
     out = system: let
       pkgs = import nixpkgs {
         inherit system;
-        overlays = [ocaml-overlay.overlays.${system}];
+        overlays = [
+          # ocaml-overlay.overlays.${system}
+          (final: prev: {ocamlPackages = prev.ocaml-ng.ocamlPackages_4_14;})
+          melange.overlays.default
+        ];
       };
       inherit (pkgs) lib;
       myPkgs =
@@ -36,6 +41,7 @@
         inputsFrom = lib.attrValues myDrvs;
         buildInputs = with pkgs;
         with ocamlPackages; [
+          ocamlPackages.melange
           ocaml-lsp
           ocamlformat
           odoc

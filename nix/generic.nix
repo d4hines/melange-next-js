@@ -5,7 +5,7 @@
   ocamlPackages,
   static ? false,
   doCheck,
-  nix-filter
+  nix-filter,
 }:
 with ocamlPackages; rec {
   service = buildDunePackage {
