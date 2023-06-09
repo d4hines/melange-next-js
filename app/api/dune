@@ -1,0 +1,6 @@
+(library
+ (name app_api)
+ (modes melange)
+ (libraries my_lib)
+ (preprocess
+  (pps melange.ppx)))

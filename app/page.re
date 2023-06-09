@@ -5,6 +5,7 @@ let default = () => {
   let timesClicked = Lib.read();
   <div>
     <My_client_component />
+    <Increment_button timesClicked />
     <p>
       {React.string("Clicked ")}
       {React.int(timesClicked)}

@@ -49,6 +49,7 @@ with ocamlPackages; rec {
       reason-react 
       reactjs-jsx-ppx
       reason
+      melange-fetch 
 
       ppx_expect
     ];

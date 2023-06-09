@@ -1,7 +1,7 @@
 (library
  (name app)
  (modes melange)
- (libraries my_lib reason-react)
+ (libraries my_lib reason-react melange-fetch)
  (melange.runtime_deps
   (glob_files *.jsx)
   database)

@@ -1,7 +1,7 @@
 (melange.emit
  (target "nextjs-output")
  (module_systems es6)
- (libraries my_lib app)
+ (libraries my_lib app app_api)
  (runtime_deps
   package.json
   next.config.js
