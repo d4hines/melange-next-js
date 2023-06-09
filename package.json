@@ -1,0 +1,13 @@
+{
+  "name": "melange-next-js",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/d4hines/melange-next-js.git",
+  "author": "Daniel Hines <d4hines@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "next": "^13.4.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

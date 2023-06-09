@@ -29,3 +29,4 @@ setup.log
 _opam/
 
 .direnv
+node_modules
