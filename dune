@@ -1,0 +1,10 @@
+(melange.emit
+ (target "nextjs-output")
+ (module_systems es6)
+ (libraries my_lib app)
+ (runtime_deps
+  package.json
+  next.config.js
+  (source_tree public)))
+
+(dirs :standard \ node_modules)

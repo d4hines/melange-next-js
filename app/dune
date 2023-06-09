@@ -2,4 +2,5 @@
  (name app)
  (modes melange)
  (libraries reason-react)
+ (melange.runtime_deps (glob_files *.jsx))
  (preprocess (pps reactjs-jsx-ppx melange.ppx)))

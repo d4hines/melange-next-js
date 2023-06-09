@@ -6,7 +6,7 @@
   "author": "Daniel Hines <d4hines@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "next dev"
+    "dev": "(cd _build/default/nextjs-output && next dev)"
   },
   "dependencies": {
     "next": "^13.4.4",

@@ -1,4 +1,6 @@
-(melange.emit
- (emit_stdlib false)
- (target "melange")
- (libraries my_lib app))
+(library
+ (name my_service)
+ (modes melange)
+ (libraries my_lib)
+ (preprocess
+  (pps melange.ppx)))
