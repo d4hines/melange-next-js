@@ -1,4 +1,4 @@
-[@bs.config {flags: [|"--preamble", "\"use client\";"|]}];
+[@mel.config {flags: [|"--preamble", "\"use client\";"|]}];
 
 let fetcher = url =>
   Fetch.(

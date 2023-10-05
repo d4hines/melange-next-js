@@ -7,7 +7,7 @@ let default = () => {
     <My_client_component />
     <Increment_button timesClicked />
     <p>
-      {React.string("Clicked ")}
+      {React.string("Clicked increment ")}
       {React.int(timesClicked)}
       {React.string(" times!")}
     </p>

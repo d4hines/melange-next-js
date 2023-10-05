@@ -2,7 +2,7 @@ open My_lib;
 module Response = {
   type t;
 
-  [@bs.new] external create: (string, Js.t({..})) => t = "Response";
+  [@mel.new] external create: (string, Js.t({..})) => t = "Response";
 };
 
 let foo = (_request: Js.t({..})) => {
@@ -12,4 +12,4 @@ let foo = (_request: Js.t({..})) => {
   Response.create(x, {"status": 200});
 };
 
-[%%bs.raw {|export const POST = foo|}];
+[%%mel.raw {|export const POST = foo|}];

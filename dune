@@ -5,6 +5,7 @@
  (runtime_deps
   package.json
   next.config.js
+  tsconfig.json
   (source_tree public)))
 
 (dirs :standard \ node_modules)
