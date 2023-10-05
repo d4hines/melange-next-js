@@ -6,4 +6,4 @@
   (glob_files *.jsx)
   database)
  (preprocess
-  (pps reactjs-jsx-ppx melange.ppx)))
+  (pps reason-react-ppx melange.ppx)))

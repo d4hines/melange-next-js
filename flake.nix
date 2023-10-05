@@ -3,7 +3,7 @@
     flake-utils.url = "github:numtide/flake-utils";
     nix-filter.url = "github:numtide/nix-filter";
 
-    nixpkgs.url = "github:nix-ocaml/nix-overlays";
+    nixpkgs.url = "github:anmonteiro/nix-overlays";
     nixpkgs.inputs.flake-utils.follows = "flake-utils";
     nixpkgs.inputs.nix-filter.follows = "nix-filter";
 
@@ -18,14 +18,16 @@
     melange,
   }: let
     out = system: let
-      pkgs = import nixpkgs {
-        inherit system;
-        overlays = [
-          # ocaml-overlay.overlays.${system}
-          (final: prev: {ocamlPackages = prev.ocaml-ng.ocamlPackages_4_14;})
-          melange.overlays.default
-        ];
-      };
+      pkgs =
+        (import nixpkgs {
+          inherit system;
+          extraOverlays = [
+            melange.overlays.default
+          ];
+        })
+        .extend (self: super: {
+          ocamlPackages = super.ocaml-ng.ocamlPackages_5_1;
+        });
       inherit (pkgs) lib;
       myPkgs =
         pkgs.recurseIntoAttrs
@@ -41,6 +43,7 @@
         inputsFrom = lib.attrValues myDrvs;
         buildInputs = with pkgs;
         with ocamlPackages; [
+          gnumake
           ocamlPackages.melange
           ocaml-lsp
           ocamlformat

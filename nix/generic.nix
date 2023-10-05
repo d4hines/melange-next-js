@@ -42,14 +42,19 @@ with ocamlPackages; rec {
     checkInputs = [
     ];
 
+    nativeBuildInputs = [
+      melange
+      reason 
+    ];
     propagatedBuildInputs = [
       piaf
       lwt
       yojson
-      reason-react 
-      reactjs-jsx-ppx
       reason
-      melange-fetch 
+      melange
+      melange-fetch
+      reason
+      reason-react
 
       ppx_expect
     ];
